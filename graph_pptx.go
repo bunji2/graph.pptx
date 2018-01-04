@@ -1,4 +1,5 @@
-// グラフデータを読み込み、ノード・エッジの情報を抽出し保持するパッケージ
+// Go package that extracts the graph data of nodes and edges from directed graph edited in PPTX.
+// PPTX で書かれたグラフデータを読み込み、ノード・エッジの情報を抽出し保持するパッケージ
 package graph_pptx
 
 import (
