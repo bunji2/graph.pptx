@@ -20,14 +20,12 @@ func (s Shape) String() string {
 
 // 新しいノードシェイプの値を文字列から作る関数
 func NewShape(str string) (r Shape, ok bool) {
-	for i,s := range shapes {
-		if s == str {
-			r = Shape(i)
-			ok = true
-			return
-		}
-	}
-	ok = false
+
+	// TODO: str をチェックする
+
+	r = Shape(i)
+	ok = true
+
 	return
 }
 
