@@ -10,23 +10,12 @@ const (
 	Unknown_shape = "unknown"
 )
 
-// ノードの形（ノードシェイプ）。必要に応じてここに追加していく
-var shapes []string = []string{
-	"rect",
-	"ellipse",
-	"hexagon",
-	/* append your shapes here */
-}
-
 // ノードシェイプの型
-type Shape int
+type Shape string
 
 // ノードシェイプの型の値を文字列にするメソッド
 func (s Shape) String() string {
-	if int(s)>=0 && int(s)<len(shapes) {
-		return shapes[int(s)]
-	}
-	return Unknown_shape
+	return string(s)
 }
 
 // 新しいノードシェイプの値を文字列から作る関数
@@ -116,30 +105,24 @@ func DoWithEdges(f func(string,Edge)bool) {
 	}
 }
 
-/*
-func GetNodes() NodeMap {
-	return nodes
-}
+// 指定したIDのノードを取得する関数
 func GetNodeOf(nid string) Node {
 	return nodes[nid]
 }
 
-func GetEdges() EdgeMap {
-	return edges
+// 指定したIDのエッジを取得する関数
+func GetEdgeOf(eid string) Edge {
+	return edges[eid]
 }
-func GetEdgeOf(nid string) Edge {
-	return edges[nid]
-}
-*/
 
-// 初期化関数
+// 初期化関数。必須。
 func Init() {
 	nodes = NodeMap{}
 	edges = EdgeMap{}
 	init_pptx()
 }
 
-// ファイルから、ノードとエッジを抽出する。
+// ファイルから、ノードとエッジを抽出する関数。
 // グローバル変数 nodes と edges に抽出結果を保存する。
 func Parse(filename string) error {
 	return parse_pptx(filename)
