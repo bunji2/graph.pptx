@@ -1,7 +1,6 @@
 package graph_pptx
 
-// グラフデータのフォーマット＝pptx
-// パースの方法=XPath
+// Requires: gopkg.in/xmlpath.v2
 
 /*
 pptx のドキュメントから、XPath を使って、ノードとエッジを取得する。
