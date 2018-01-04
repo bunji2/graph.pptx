@@ -6,7 +6,7 @@ package main
 import (
 	"fmt"
 	"os"
-	gp "./graph.pptx"
+	gp "github.com/bunji2/graph.pptx"
 )
 
 func main() {
@@ -14,7 +14,7 @@ func main() {
 		fmt.Printf("Usage: %s file.pptx\n", os.Args[0])
 		return
 	} 
-	gp.Init()
+	gp.Init() // 忘れずに…
 	if err := gp.Parse(os.Args[1]); err == nil {
 		//gp.Dump()
 		dot_header("G")
@@ -37,6 +37,15 @@ func dot_node(nid, label string) bool {
 	fmt.Printf("  %s [label = \"%s\"];\n", nid, label)
 	return true
 }
+
+/*
+// 上の場合はノードはすべて楕円になるはず。
+// DOT 用の shape を指定できる場合はこんな感じ…
+func dot_node(nid, label, shape string) bool {
+	fmt.Printf("  %s [label = \"%s\" shape = \"%s\"];\n", nid, label, shape)
+	return true
+}
+*/
 
 func dot_edge(src_id, dst_id string) bool {
 	if src_id == "" || dst_id == "" {
