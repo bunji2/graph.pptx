@@ -23,7 +23,7 @@ func NewShape(str string) (r Shape, ok bool) {
 
 	// TODO: str をチェックする
 
-	r = Shape(i)
+	r = Shape(str)
 	ok = true
 
 	return
