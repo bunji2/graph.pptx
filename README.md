@@ -15,7 +15,7 @@ Followin sample extracts nodes and edges from PPTX file "sample.pptx".
 ```go
 import (
     "fmt"
-    "github.com/bunji2/graph.pptx"
+    gp "github.com/bunji2/graph.pptx"
 )
 
 func sample() {
