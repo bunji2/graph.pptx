@@ -14,7 +14,7 @@ func main() {
 		fmt.Printf("Usage: %s file.pptx\n", os.Args[0])
 		return
 	} 
-	gp.Init() // 忘れずに…
+	gp.Init() // !!!mandatory!!!
 	if err := gp.Parse(os.Args[1]); err == nil {
 		//gp.Dump()
 		dot_header("G")
